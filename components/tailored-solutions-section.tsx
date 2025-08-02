@@ -65,7 +65,7 @@ export default function TailoredSolutionsSection() {
           suas necessidades, utilizando as tecnologias mais robustas e modernas do mercado para garantir <span className="text-accent-blue">inovação</span> e
           <span className="text-accent-blue"> eficiência</span>.
         </motion.p>
-        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 md:gap-6 mt-8 md:mt-12">
+        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 md:gap-6 mt-8 md:mt-12 justify-center lg:justify-start">
           <Button
             onClick={() => scrollToSection("como-funciona")}
             className="bg-gradient-to-r from-accent-blue to-blue-600 hover:from-blue-600 hover:to-accent-blue text-white px-8 md:px-12 py-3 md:py-4 rounded-xl text-base md:text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-accent-blue/25"
