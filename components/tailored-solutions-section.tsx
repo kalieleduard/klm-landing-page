@@ -39,59 +39,159 @@ export default function TailoredSolutionsSection() {
 
   return (
     <motion.section
-      id="solucoes-sob-medida" // Added ID for navigation
-      className="bg-primary-background text-primary-foreground min-h-screen py-16 px-4 md:px-8 lg:px-16 flex flex-col lg:flex-row items-center justify-center gap-12"
+      id="solucoes-sob-medida"
+      className="bg-gradient-to-br from-primary-background via-slate-900 to-primary-background text-primary-foreground h-screen w-full px-4 md:px-8 lg:px-16 xl:px-24 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 relative overflow-hidden"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       variants={sectionVariants}
     >
-      <motion.div variants={itemVariants} className="lg:w-1/2 max-w-xl text-center lg:text-left">
-        <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-bold mb-4">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-r from-accent-blue/5 via-transparent to-accent-blue/5" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-blue/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
+      <motion.div variants={itemVariants} className="lg:w-1/2 max-w-2xl text-center lg:text-left relative z-10">
+        <motion.div 
+          variants={itemVariants} 
+          className="inline-block bg-gradient-to-r from-accent-blue/20 to-blue-500/20 rounded-full px-4 py-2 mb-6"
+        >
+          <span className="text-accent-blue text-sm font-medium">Desenvolvimento Personalizado</span>
+        </motion.div>
+        <motion.h2 variants={itemVariants} className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 bg-gradient-to-r from-white via-gray-100 to-accent-blue bg-clip-text text-transparent leading-tight">
           Soluções <span className="text-accent-blue">Sob Medida</span>
         </motion.h2>
-        <motion.p variants={itemVariants} className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
-          Na KLM CORP, cada projeto é único. Desenvolvemos softwares personalizados que se encaixam perfeitamente nas
-          suas necessidades, utilizando as tecnologias mais robustas e modernas do mercado para garantir inovação e
-          eficiência.
+        <motion.p variants={itemVariants} className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed">
+          Na <span className="text-accent-blue font-semibold">KLM CORP</span>, cada projeto é único. Desenvolvemos softwares personalizados que se encaixam perfeitamente nas
+          suas necessidades, utilizando as tecnologias mais robustas e modernas do mercado para garantir <span className="text-accent-blue">inovação</span> e
+          <span className="text-accent-blue"> eficiência</span>.
         </motion.p>
-        <motion.div variants={itemVariants} className="mt-10">
+        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 mt-12">
           <Button
-            onClick={() => scrollToSection("como-funciona")} // Links to "Como funciona?" section
-            className="bg-accent-blue hover:bg-blue-700 text-white px-6 py-2 rounded-md text-base font-normal transition-colors"
+            onClick={() => scrollToSection("como-funciona")}
+            className="bg-gradient-to-r from-accent-blue to-blue-600 hover:from-blue-600 hover:to-accent-blue text-white px-12 py-4 rounded-xl text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-accent-blue/25"
           >
             Saiba Mais
           </Button>
+          <Button
+            onClick={() => scrollToSection("contato")}
+            className="border-2 border-accent-blue/50 text-accent-blue hover:bg-accent-blue hover:text-white px-12 py-4 rounded-xl text-lg font-medium transition-all duration-300 bg-transparent backdrop-blur-sm"
+          >
+            Fale Conosco
+          </Button>
         </motion.div>
       </motion.div>
-      <motion.div variants={itemVariants} className="lg:w-1/2 max-w-2xl text-center lg:text-left">
-        <motion.p variants={itemVariants} className="text-lg text-gray-300 mt-6 mb-6">
-          Nossas principais stacks
-        </motion.p>
-        <motion.div
-          className="flex justify-center items-center gap-8 flex-wrap max-w-4xl"
-          initial="hidden"
-          animate="visible"
-          variants={containerVariants}
+      <motion.div variants={itemVariants} className="lg:w-1/2 w-full max-w-4xl text-center lg:text-left relative z-10">
+        <motion.div 
+          variants={itemVariants} 
+          className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-sm rounded-3xl p-10 lg:p-12 border border-slate-700/50 shadow-2xl h-full"
         >
-          <motion.div variants={logoVariants}>
-            <Image src="/icons/flutter_logo.svg" alt="Flutter Logo" width={100} height={30} className="h-auto" />
+          <motion.div variants={itemVariants} className="text-center mb-10">
+            <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">Tecnologias de Ponta</h3>
+            <p className="text-xl text-gray-400">Stack moderna para soluções robustas</p>
           </motion.div>
-          <motion.div variants={logoVariants}>
-            <Image src="/icons/kotlin_logo.svg" alt="Kotlin Logo" width={80} height={30} className="h-auto" />
-          </motion.div>
-          <motion.div variants={logoVariants}>
-            <Image src="/icons/docker_logo.svg" alt="Docker Logo" width={80} height={30} className="h-auto" />
-          </motion.div>
-          <motion.div variants={logoVariants}>
-            <Image src="/icons/amazon_web_services_logo.svg" alt="AWS Logo" width={80} height={30} className="h-auto" />
-          </motion.div>
-          <motion.div variants={logoVariants}>
-            <Image src="/icons/react_logo.svg" alt="React Logo" width={50} height={45} className="h-auto" />
-          </motion.div>
-          <motion.div variants={logoVariants}>
-            <Image src="/icons/java_logo.svg" alt="Java Logo" width={40} height={55} className="h-auto" />
-          </motion.div>
+          
+          <div className="overflow-hidden p-8">
+            <motion.div
+              className="flex items-center gap-16 w-max"
+              animate={{ x: [0, -120 * 6] }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 25,
+                  ease: "linear",
+                },
+              }}
+            >
+              {/* First set of logos */}
+              <motion.div 
+                variants={logoVariants} 
+                className="flex-shrink-0 bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                whileHover={{ y: -5 }}
+              >
+                <Image src="/icons/flutter_logo.svg" alt="Flutter Logo" width={80} height={80} className="h-auto filter brightness-110" />
+              </motion.div>
+              <motion.div 
+                variants={logoVariants} 
+                className="flex-shrink-0 bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                whileHover={{ y: -5 }}
+              >
+                <Image src="/icons/kotlin_logo.svg" alt="Kotlin Logo" width={80} height={80} className="h-auto filter brightness-110" />
+              </motion.div>
+              <motion.div 
+                variants={logoVariants} 
+                className="flex-shrink-0 bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                whileHover={{ y: -5 }}
+              >
+                <Image src="/icons/docker_logo.svg" alt="Docker Logo" width={80} height={80} className="h-auto filter brightness-110" />
+              </motion.div>
+              <motion.div 
+                variants={logoVariants} 
+                className="flex-shrink-0 bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                whileHover={{ y: -5 }}
+              >
+                <Image src="/icons/amazon_web_services_logo.svg" alt="AWS Logo" width={80} height={80} className="h-auto filter brightness-110" />
+              </motion.div>
+              <motion.div 
+                variants={logoVariants} 
+                className="flex-shrink-0 bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                whileHover={{ y: -5 }}
+              >
+                <Image src="/icons/react_logo.svg" alt="React Logo" width={80} height={80} className="h-auto filter brightness-110" />
+              </motion.div>
+              <motion.div 
+                variants={logoVariants} 
+                className="flex-shrink-0 bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                whileHover={{ y: -5 }}
+              >
+                <Image src="/icons/java_logo.svg" alt="Java Logo" width={80} height={80} className="h-auto filter brightness-110" />
+              </motion.div>
+              
+              {/* Duplicate set for seamless loop */}
+              <motion.div 
+                variants={logoVariants} 
+                className="flex-shrink-0 bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                whileHover={{ y: -5 }}
+              >
+                <Image src="/icons/flutter_logo.svg" alt="Flutter Logo" width={80} height={80} className="h-auto filter brightness-110" />
+              </motion.div>
+              <motion.div 
+                variants={logoVariants} 
+                className="flex-shrink-0 bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                whileHover={{ y: -5 }}
+              >
+                <Image src="/icons/kotlin_logo.svg" alt="Kotlin Logo" width={80} height={80} className="h-auto filter brightness-110" />
+              </motion.div>
+              <motion.div 
+                variants={logoVariants} 
+                className="flex-shrink-0 bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                whileHover={{ y: -5 }}
+              >
+                <Image src="/icons/docker_logo.svg" alt="Docker Logo" width={80} height={80} className="h-auto filter brightness-110" />
+              </motion.div>
+              <motion.div 
+                variants={logoVariants} 
+                className="flex-shrink-0 bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                whileHover={{ y: -5 }}
+              >
+                <Image src="/icons/amazon_web_services_logo.svg" alt="AWS Logo" width={80} height={80} className="h-auto filter brightness-110" />
+              </motion.div>
+              <motion.div 
+                variants={logoVariants} 
+                className="flex-shrink-0 bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                whileHover={{ y: -5 }}
+              >
+                <Image src="/icons/react_logo.svg" alt="React Logo" width={80} height={80} className="h-auto filter brightness-110" />
+              </motion.div>
+              <motion.div 
+                variants={logoVariants} 
+                className="flex-shrink-0 bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                whileHover={{ y: -5 }}
+              >
+                <Image src="/icons/java_logo.svg" alt="Java Logo" width={80} height={80} className="h-auto filter brightness-110" />
+              </motion.div>
+            </motion.div>
+          </div>
         </motion.div>
       </motion.div>
     </motion.section>

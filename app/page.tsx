@@ -3,6 +3,8 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
+import { RetroGrid } from "@/components/magicui/retro-grid"
+import { ShimmerButton } from "@/components/magicui/shimmer-button"
 import HowItWorksAndSolutionsSection from "@/components/how-it-works-and-solutions-section"
 import TechnologiesSection from "@/components/technologies-section"
 import ContactAndFooterSection from "@/components/contact-and-footer-section"
@@ -69,6 +71,7 @@ export default function Component() {
         animate="visible"
         variants={containerVariants}
       >
+        <RetroGrid className="absolute inset-0 z-0" opacity={0.1} lightLineColor="rgba(220, 220, 220, 0.5)" />
         <motion.p variants={itemVariants} className="text-accent-blue text-lg font-medium mb-2">
           Software House
         </motion.p>
